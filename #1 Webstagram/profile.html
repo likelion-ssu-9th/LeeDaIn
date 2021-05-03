@@ -12,44 +12,54 @@
     <body>
         <header>
             <div class="profileImg">
-                <button id="profileImg"><img src="img/ssu_likelion_logo_150x150.png" alt="profileImg" /></button>
+                <button id="imgBtn"><img src="img/ssu_likelion_logo_150x150.png" alt="profileImg" /></button>
             </div>
-            <div>
-                <h1>LikeLionSSU</h1>
-                <button id="editProfile">프로필 편집</button>
-            </div>
-            <div>
-                <ul>
-                    <li>000 게시물</li>
-                    <li>000 팔로워</li>
-                    <li>000 팔로잉</li>
-                </ul>
-            </div>
-            <div>
-                <p>hello world ☺</p>
+            <div class="profileContainer">
+                <div class="profileUserSetting">
+                    <h1 class="profileUserName">LikeLionSSU</h1>
+                    <button id="editProfile">프로필 편집</button>
+                </div>
+                <div class="profileStats">
+                    <ul>
+                        <li><b>000</b> 게시물</li>
+                        <li><b>000</b> 팔로워</li>
+                        <li><b>000</b> 팔로잉</li>
+                    </ul>
+                </div>
+                <div class="profileIntro">
+                    <p class="profileIntroduce">hello world ☺</p>
+                </div>
             </div>
         </header>
         <main class="myFeed">
-            <div>
-                <img src="img/lionface.png" alt="feedImg" />
-                <ul>
-                    <li>Likes: 0</li>
-                    <li>Comments: 0</li>
-                </ul>
-            </div>
-            <div>
-                <img src="img/lionface.png" alt="feedImg" />
-                <ul>
-                    <li>Likes: 0</li>
-                    <li>Comments: 0</li>
-                </ul>
-            </div>
-            <div>
-                <img src="img/lionface.png" alt="feedImg" />
-                <ul>
-                    <li>Likes: 0</li>
-                    <li>Comments: 0</li>
-                </ul>
+            <div class="gallery">
+                <div class="galleryPicture">
+                    <img src="img/lionface.png" alt="feedImg" />
+                    <div class="galleryPictureInfo">
+                        <ul>
+                            <li>Likes: 0</li>
+                            <li>Comments: 0</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="galleryPicture">
+                    <img src="img/lionface.png" alt="feedImg" />
+                    <div class="galleryPictureInfo">
+                        <ul>
+                            <li>Likes: 0</li>
+                            <li>Comments: 0</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="galleryPicture">
+                    <img src="img/lionface.png" alt="feedImg" />
+                    <div class="galleryPictureInfo">
+                        <ul>
+                            <li>Likes: 0</li>
+                            <li>Comments: 0</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
