@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog Detail</title>
+        <style>
+            .blog {
+                padding-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>자세한 본문 내용입니다.</h1>
+        <div class="blog">
+            <h1>제목 : {{blog.title}}</h1>
+            <p>작성 날짜 : {{blog.pub_date}}</p>
+            <p>자세한 본문 : {{blog.body}}</p>
+        </div>
+    </body>
+</html>
