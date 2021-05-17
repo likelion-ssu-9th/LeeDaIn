@@ -1,0 +1,13 @@
+<body>
+    <div style="text-align: center">
+        <h2>입력한 텍스트 전문</h2>
+        <div>{{fulltext}}</div>
+        <h3>당신이 입력한 텍스트는 {{count}}개의 단어로 구성되어 있습니다.</h3>
+
+        <div>
+            {% for word, totalCount in wordDict %} {{word}} : {{totalCount}}
+            <br />
+            {% endfor %}
+        </div>
+    </div>
+</body>
