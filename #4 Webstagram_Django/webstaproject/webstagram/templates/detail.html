@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instagram</title>
+        <link rel="icon" href="{% static 'img/icon.png' %}" />
+        <link rel="stylesheet" href="{% static 'css/feed.css' %}" />
+    </head>
+    <body>
+        <div class="main">
+            <section class="cardViewSection">
+                <div class="cardView">
+                    <header>
+                        <div class="userNickName">{{post.writer.last_name}}</div>
+                    </header>
+                    <div class="cardImage">
+                        <img src="{{post.image.url}}" alt="sample" />
+                    </div>
+
+                    <div class="cardInfo">
+                        <div class="infoLeft">
+                            <img src="{% static 'img/liked.png' %}" alt="좋아요" class="feedImg" />
+                            <img src="{% static 'img/comment.png' %}" alt="코멘트" class="feedImg" />
+                            <img src="{% static 'img/upload.png' %}" alt="업로드" class="feedImg" />
+                        </div>
+                        <div class="infoRight">
+                            <a href="{% url 'edit' post.id %}"><img src="{% static 'img/edit.png' %}" alt="수정" class="feedImg" /></a>
+                            <a href="{% url 'delete' post.id %}"><img src="{% static 'img/delete.png' %}" alt="삭제" class="feedImg" /></a>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        comment1<br />
+                        comment2<br />
+                    </div>
+                    <div class="comment_form">
+                        <form action="">
+                            <input type="text" placeholder="댓글 입력.." />
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

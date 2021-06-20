@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    width: 850px;
+    margin: 100px auto 100px;
+}
+
+#imgBtn {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+}
+
+#imgBtn img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.profileContainer {
+    display: flex;
+    height: 150px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 150px;
+}
+
+.profileUserSetting {
+    display: flex;
+    align-items: center;
+}
+
+.profileUserName {
+    font-weight: 500;
+    margin: 0;
+}
+
+#editProfile {
+    margin-left: 20px;
+    padding: 0 18px;
+    height: 60%;
+    font-weight: bold;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+.profileStats {
+    /* margin-bottom: 10px; */
+}
+
+.profileStats ul {
+    list-style: none;
+    margin: 0;
+}
+
+.profileStats li {
+    float: left;
+    margin-right: 30px;
+}
+
+.profileIntroduce {
+    font-weight: bold;
+    margin: 0;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.galleryPicture {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.galleryPicture img {
+    width: 250px;
+    height: 250px;
+}
+
+.galleryPictureInfo {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.galleryPictureInfo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.galleryPictureInfo li {
+    font-size: 10pt;
+    font-weight: bold;
+    color: white;
+    float: left;
+    padding-left: 15px;
+}
+
+.galleryPicture:hover .galleryPictureInfo {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.3);
+}

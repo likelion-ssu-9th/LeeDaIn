@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instagram</title>
+        <link rel="icon" href="{% static 'img/icon.png' %}" />
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/background.css' %}" />
+    </head>
+    <body>
+        <header>
+            <div class="profileImg">
+                <button id="imgBtn"><img src="{% static 'img/ssu_likelion_logo_150x150.png' %}" alt="profileImg" /></button>
+            </div>
+            <div class="profileContainer">
+                <div class="profileUserSetting">
+                    <h1 class="profileUserName">{{writer.last_name}}</h1>
+                    <button id="editProfile">프로필 편집</button>
+                </div>
+                <div class="profileStats">
+                    <ul>
+                        <li><b>000</b> 게시물</li>
+                        <li><b>000</b> 팔로워</li>
+                        <li><b>000</b> 팔로잉</li>
+                    </ul>
+                </div>
+                <div class="profileIntro">
+                    <p class="profileIntroduce">hello world ☺</p>
+                </div>
+            </div>
+        </header>
+        <main class="myFeed">
+            <div class="gallery">
+                {% for post in posts %}
+                <div class="galleryPicture">
+                    <img src="{{post.image.url}}}" alt="feedImg" />
+                    <div class="galleryPictureInfo">
+                        <ul>
+                            <li>Likes: 0</li>
+                            <li>Comments: 0</li>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+    </body>
+</html>

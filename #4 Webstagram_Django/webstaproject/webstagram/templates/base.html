@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instagram</title>
+        <link rel="icon" href="{% static 'img/icon.png' %}" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    </head>
+
+    <body>
+        <header>
+            <div class="left_box">
+                <a href="{% url 'base' %}">
+                    <div class="favicon_frame">
+                        <img src="{% static 'img/line_favicon.png' %}" alt="인스타 로고" class="faviconFrame" />
+                    </div>
+                </a>
+                <a href="{% url 'base' %}">
+                    <div class="line">
+                        <img src="{% static 'img/logo_text.png' %}" alt="인스타 글씨" class="logo" />
+                    </div>
+                </a>
+            </div>
+            <div class="right_box">
+                <div class="heart_box">
+                    <a href="{% url 'new' %}"><img src="{% static 'img/liked.png' %}" alt="글 작성" class="heart" /></a>
+                </div>
+                <div class="myInfo_box">
+                    <a href="{% url 'profile' user.id %}"><img src="{% static 'img/myinfo.png' %}" alt="내 프로필" class="myInfo" /></a>
+                </div>
+                <div class="login_box">
+                    {% if not user.is_authenticated %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'signup' %}">SignUp</a>
+                    {% endif %} {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <div class="container">{% block content %} {% endblock %}</div>
+    </body>
+</html>

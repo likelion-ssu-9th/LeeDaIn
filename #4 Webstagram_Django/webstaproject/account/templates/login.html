@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instagram</title>
+        <link rel="icon" href="{% static 'img/icon.png' %}" />
+        <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/background.css' %}" />
+    </head>
+
+    <body>
+        <div class="login_container">
+            <img src="{% static 'img/logo_text.png' %}" alt="instagramText" class="instagramText" href="{% url 'base' %}" />
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" class="userLogin" placeholder="전화번호, 사용자 이름 또는 이메일" />
+                <input type="password" name="password" class="userLogin" placeholder="비밀번호" />
+                <input type="submit" id="loginButton" value="로그인" />
+            </form>
+        </div>
+
+        <div class="join_container">
+            <footer class="joinInsta">
+                <p class="join">계정이 없으신가요? <a class="joinBtn" href="{% url 'signup' %}">가입하기</a></p>
+            </footer>
+        </div>
+    </body>
+</html>
