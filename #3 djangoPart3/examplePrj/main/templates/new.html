@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>example</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Write Your Blog</h1>
+
+        <form action="{%url 'create' %}" method="post">
+            {%csrf_token%}
+            <p>title: <input type="text" name="title" /></p>
+
+            body: <textarea name="body" id="" cols="30" rows="10"></textarea>
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>

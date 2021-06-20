@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <title>간단한 지도 표시하기</title>
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4yc5iep9kb"></script>
+        <title>example</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map" style="width: 100%; height: 400px"></div>
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.4963111, 126.9574596),
+                zoom: 15,
+            };
+
+            var map = new naver.maps.Map('map', mapOptions);
+        </script>
+        <div>
+            <button class="writeNew" type="button">
+                <a href="{%url 'new'%}">글작성</a>
+            </button>
+            {% if user.is_authenticated %}
+            <button><a href="{% url 'logout' %}">로그아웃</a></button>
+            {% endif %} {% if not user.is_authenticated %}
+            <button><a href="{% url 'login' %}">로그인</a></button>
+            <button><a href="{% url 'signup' %}">회원가입</a></button>
+            {% endif %}
+        </div>
+        <div class="container">
+            {%for blog in blogs %}
+            <div>
+                <h3>{{blog.id}} {{blog.title}}</h3>
+                <a href="{% url 'profile' blog.author.id %}">작성자:{{blog.author.username}}</a>
+                <br />
+                {{blog.summary}}<a href="{%url 'detail' blog.id %}">...more</a>
+                <br />
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>example</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h2>{{author.username}}님의 프로필</h2>
+                <br />
+                <h3>[글 모음]</h3>
+                {% for blog in author_blogs %}
+
+                <p><b> 제목 : {{blog.title}}</b></p>
+                <br />
+                작성일: {{blog.pub_date}}<br />
+                내용: {{blog.summary}}<br />
+                <a>...more</a>
+                <br /><br />
+
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
