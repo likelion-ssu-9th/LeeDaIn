@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog New</title>
+    </head>
+    <body>
+        <h1>Write Your Blog</h1>
+
+        <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %} {{form.as_p}}
+            <!-- <p>제목 : <input type="text" name="title" /></p>
+            <p>작성자 : <input type="text" name="writer" /></p>
+            <p>사진 : <input type="file" name="image" /></p>
+            본문 : <textarea name="body" id="" cols="30" rows="10"></textarea> -->
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>

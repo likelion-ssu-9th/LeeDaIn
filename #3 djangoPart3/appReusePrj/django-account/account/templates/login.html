@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body{text-align: center};
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Login</h2>
+                <form method="POST" action="{% url 'login'%}">
+                    {% csrf_token%}
+                    Username:
+                    <br>
+                    <input name="username" type="text" value="">
+                    <br>
+                    Password:
+                    <br>
+                    <input name="password" type="password" value="">
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </form>
+        </div>
+    </body>
+</html>

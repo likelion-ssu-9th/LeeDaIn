@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog Edit</title>
+    </head>
+    <body>
+        <h1>Edit Your Blog</h1>
+
+        <form action="{% url 'update' edit_blog.id %}" method="POST">
+            {% csrf_token %}
+
+            <p>제목 : <input type="text" name="title" value="{{edit_blog.title}}" /></p>
+            <p>작성자 : <input type="text" name="writer" value="{{edit_blog.writer}}" /></p>
+            본문 : <textarea name="body" id="" cols="30" rows="10">{{edit_blog.body}}</textarea>
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>

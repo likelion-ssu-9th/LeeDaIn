@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body{text-align: center};
+        </style>
+    </head>
+    <body>
+        <h1>앱 재사용 예제를 위한 프로젝트</h1>
+        <br><br>
+        <p>
+            이 어둠을 빨간 코로 비춰줄래 어디서부터 잘못된 건지 온 세상이 all black black black<br>
+            지금 너와 난 다 깨져버린 1000피스 lego block block block 차라리 더 어두워지면 좋겠어 <br>
+            이 세상에 스위치가 있다면 꺼버릴거야 그리고 널 향한 노랠 부르겠어 이 노랠 듣는다면 내게로 와<br>
+            이 어둠을 빨간 코로 비춰줄래 코코코 red 코 코 red 코
+        </p>
+        <br><br>
+        <!--여기서 아래부터-->
+         {% if user.is_authenticated %}
+                <button ><a href="{% url 'logout' %}">로그아웃</a></button>
+         {% endif %}
+
+         {% if not user.is_authenticated %}
+                <button ><a href="{% url 'login' %}">로그인</a></button>
+                <button ><a href="{% url 'signup' %}">회원가입</a></button>
+         {% endif %}
+         <!--여기위까지 복사해주세요-->
+    </body>
+</html>
