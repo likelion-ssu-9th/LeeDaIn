@@ -10,13 +10,13 @@ def login_view(request):
         user = authenticate(request=request, username=username, password=password)
         if user is not None:
             login(request, user)
-        return redirect("base")
+        return redirect("feed")
     else:
         return render(request, 'login.html')
 
 def logout_view(request):
     logout(request)
-    return redirect("base")
+    return redirect("feed")
 
 def signup(request):
     if request.method == 'POST':
@@ -24,6 +24,6 @@ def signup(request):
                 username=request.POST["username"], password=request.POST["password"], first_name=request.POST["name"], last_name=request.POST["nickname"]
             )
             login(request, user)
-            return redirect("base")
+            return redirect("feed")
     else:
         return render(request, 'signup.html')
