@@ -31,18 +31,19 @@ def create(request):
         new_post.writer = request.user
         new_post.save()
         return redirect('detail', new_post.id)
-    return redirect('base')
+    return redirect('feed')
 
 def edit(request, id):
     edit_post = Post.objects.get(id=id)
     return render(request, 'edit.html', {'edit_post' : edit_post})
 
 def update(request, id): 
-    update_post = get_object_or_404(Post, pk = id)
-    update_post.image = request.FILE['image']
-    return redirect('feed', update_post.id)
+    update_post = Post.objects.get(id=id)
+    update_post.image = request.FILES['image']
+    update_post.save()
+    return redirect('detail', update_post.id)
 
 def delete(request, id):
     delete_post = Post.objects.get(id=id)
     delete_post.delete()
-    return redirect('base')
+    return redirect('feed')
