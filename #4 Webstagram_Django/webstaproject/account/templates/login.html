@@ -13,7 +13,7 @@
 
     <body>
         <div class="login_container">
-            <img src="{% static 'img/logo_text.png' %}" alt="instagramText" class="instagramText" href="{% url 'base' %}" />
+            <img src="{% static 'img/logo_text.png' %}" alt="instagramText" class="instagramText" href="{% url 'feed' %}" />
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <input type="text" name="username" class="userLogin" placeholder="전화번호, 사용자 이름 또는 이메일" />

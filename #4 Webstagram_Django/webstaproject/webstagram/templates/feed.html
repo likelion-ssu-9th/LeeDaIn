@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,9 +14,9 @@
             {% for post in posts %}
             <section class="cardViewSection">
                 <div class="cardView">
-                    <header>
+                    <div class="userNickname">
                         <div class="userNickName">{{post.writer.last_name}}</div>
-                    </header>
+                    </div>
                     <div class="cardImage">
                         <img src="{{post.image.url}}" alt="sample" />
                     </div>
@@ -47,3 +47,4 @@
         </div>
     </body>
 </html>
+{% endblock content %}

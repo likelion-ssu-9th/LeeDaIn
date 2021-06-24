@@ -13,18 +13,19 @@
     <body>
         <header>
             <div class="left_box">
-                <a href="{% url 'base' %}">
+                <a href="{% url 'feed' %}">
                     <div class="favicon_frame">
                         <img src="{% static 'img/line_favicon.png' %}" alt="인스타 로고" class="faviconFrame" />
                     </div>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'feed' %}">
                     <div class="line">
                         <img src="{% static 'img/logo_text.png' %}" alt="인스타 글씨" class="logo" />
                     </div>
                 </a>
             </div>
             <div class="right_box">
+                {% if user.is_authenticated %}
                 <div class="heart_box">
                     <a href="{% url 'new' %}"><img src="{% static 'img/liked.png' %}" alt="글 작성" class="heart" /></a>
                 </div>
@@ -32,11 +33,10 @@
                     <a href="{% url 'profile' user.id %}"><img src="{% static 'img/myinfo.png' %}" alt="내 프로필" class="myInfo" /></a>
                 </div>
                 <div class="login_box">
-                    {% if not user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% endif %} {% if not user.is_authenticated %}
                     <a href="{% url 'login' %}">Login</a>
                     <a href="{% url 'signup' %}">SignUp</a>
-                    {% endif %} {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Logout</a>
                     {% endif %}
                 </div>
             </div>

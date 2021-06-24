@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+.main {
+    margin-top: 30px;
+}
+
 .cardViewSection {
     background-color: white;
     width: 400px;

@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{% static 'css/background.css' %}" />
     </head>
     <body>
-        <header>
+        <div class="profile">
             <div class="profileImg">
                 <button id="imgBtn"><img src="{% static 'img/ssu_likelion_logo_150x150.png' %}" alt="profileImg" /></button>
             </div>
@@ -31,21 +31,24 @@
                     <p class="profileIntroduce">hello world ☺</p>
                 </div>
             </div>
-        </header>
+        </div>
         <main class="myFeed">
             <div class="gallery">
                 {% for post in posts %}
                 <div class="galleryPicture">
-                    <img src="{{post.image.url}}}" alt="feedImg" />
-                    <div class="galleryPictureInfo">
-                        <ul>
-                            <li>Likes: 0</li>
-                            <li>Comments: 0</li>
-                        </ul>
-                    </div>
+                    <a href="{% url 'detail' post.id %}">
+                        <img src="{{post.image.url}}}" alt="feedImg" />
+                        <div class="galleryPictureInfo">
+                            <ul>
+                                <li>Likes: 0</li>
+                                <li>Comments: 0</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
                 {% endfor %}
             </div>
         </main>
     </body>
 </html>
+{% endblock content %}

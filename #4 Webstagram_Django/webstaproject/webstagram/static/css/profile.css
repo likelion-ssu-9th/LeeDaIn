@@ -3,9 +3,7 @@ body {
 }
 
 header {
-    display: flex;
-    width: 850px;
-    margin: 100px auto 100px;
+    height: 49px;
 }
 
 #imgBtn {
@@ -21,6 +19,12 @@ header {
     width: 150px;
     height: 150px;
     object-fit: cover;
+}
+
+.profile {
+    display: flex;
+    width: 850px;
+    margin: 70px auto 100px;
 }
 
 .profileContainer {
